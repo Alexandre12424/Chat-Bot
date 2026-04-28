@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChatBot IA Empresarial</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- LOGIN -->
+<section id="login-screen" class="screen active" role="main" aria-labelledby="login-title">
+<div class="login-box">
+    <div class="mascot" aria-label="Mascote do chatbot: robô inteligente e simpático">
+        <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="50" r="45" fill="#e0e0e0" stroke="#333" stroke-width="2"/>
+            <circle cx="35" cy="40" r="5" fill="#333"/>
+            <circle cx="65" cy="40" r="5" fill="#333"/>
+            <path d="M40 60 Q50 70 60 60" stroke="#333" stroke-width="3" fill="none"/>
+            <rect x="20" y="75" width="60" height="10" fill="#333" rx="5"/>
+            <rect x="30" y="85" width="40" height="5" fill="#666" rx="2"/>
+        </svg>
+    </div>
+    <h1 id="login-title">Bem-vindo ao NOM Assistente IA</h1>
+    <p>Seu parceiro inteligente para atendimento empresarial.</p>
+    <input type="text" id="username" placeholder="Seu nome" aria-label="Digite seu nome">
+    <button onclick="enterChat()" aria-label="Entrar no chat">Entrar</button>
+</div>
+</section>
+
+<!-- CHAT -->
+<section id="chat-screen" class="screen" role="main" aria-labelledby="chat-title">
+<header>
+    <div class="header-top">
+        <h2 id="chat-title">Assistente IA</h2>
+        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema claro/escuro" title="Alternar tema">🌙</button>
+    </div>
+</header>
+
+<div id="chat-box" role="log" aria-live="polite" aria-label="Área de mensagens do chat"></div>
+
+<footer>
+    <input type="text" id="user-input" placeholder="Digite sua mensagem..." aria-label="Campo de entrada de mensagem">
+    <button onclick="sendMessage()" aria-label="Enviar mensagem">➤</button>
+</footer>
+</section>
+
+<!-- RESULTADOS -->
+<section id="result-screen" class="screen" role="main" aria-labelledby="results-title">
+<h2 id="results-title">Sugestões da IA</h2>
+<div id="results" aria-label="Sugestões baseadas na conversa"></div>
+<button onclick="backToChat()" aria-label="Voltar ao chat">Voltar</button>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>
