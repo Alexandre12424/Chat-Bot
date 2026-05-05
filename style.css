@@ -18,7 +18,7 @@ body.dark-mode {
 --text-primary: #e0e0e0;
 --text-secondary: #b0b0b0;
 --border-color: #444444;
---message-user: #0056b3;
+--message-user: #8000b3;
 --message-bot: #3a3a3a;
 --message-bot-text: #e0e0e0;
 --shadow: rgba(0, 0, 0, 0.3);
@@ -89,7 +89,7 @@ color: var(--text-primary);
 .login-box button {
 margin-top: 20px;
 padding: 12px 24px;
-background: #007bff;
+background: #8000b3;
 color: white;
 border: none;
 border-radius: 8px;
@@ -99,7 +99,7 @@ transition: background 0.3s;
 }
 
 .login-box button:hover {
-background: #0056b3;
+background: #8000b3;
 }
 
 /* MASCOTE */
@@ -261,7 +261,7 @@ color: var(--text-primary);
 }
 
 footer input:focus {
-border-color: #007bff;
+border-color: #8000b3;
 }
 
 footer input::placeholder {
@@ -270,7 +270,7 @@ color: var(--text-secondary);
 
 footer button {
 padding: 12px 16px;
-background: #007bff;
+background: #8000b3;
 color: white;
 border: none;
 border-radius: 50%;
@@ -279,7 +279,7 @@ transition: background 0.3s;
 }
 
 footer button:hover {
-background: #0056b3;
+background: #8000b3;
 }
 
 /* RESULTADOS */
@@ -383,5 +383,44 @@ padding: 10px;
 @media (max-width: 600px) {
 .message {
     max-width: 90%;
+}
+
+/* =========================
+   MASCOTE ANIMADO (IA VIVA)
+========================= */
+
+.mascot svg {
+    overflow: visible;
+}
+
+/* OLHOS */
+.eye {
+    transform-origin: center;
+    animation: blink 4s infinite;
+}
+
+/* PISCAR */
+@keyframes blink {
+    0%, 92%, 100% {
+        transform: scaleY(1);
+    }
+    94% {
+        transform: scaleY(0.1);
+    }
+    96% {
+        transform: scaleY(1);
+    }
+}
+
+/* OLHAR PARA OS LADOS (leve movimento independente) */
+.mascot {
+    animation: floatMascot 6s ease-in-out infinite;
+}
+
+/* leve “vida” no robô */
+@keyframes floatMascot {
+    0%   { transform: translateY(0px); }
+    50%  { transform: translateY(-3px); }
+    100% { transform: translateY(0px); }
 }
 }
