@@ -329,3 +329,21 @@ if (e.key === "Enter") {
     sendMessage();
 }
 });
+
+document.addEventListener("mousemove", (e) => {
+    const eyes = document.querySelectorAll(".eye");
+
+    eyes.forEach((eye) => {
+        const rect = eye.getBoundingClientRect();
+
+        const eyeX = rect.left + rect.width / 4;
+        const eyeY = rect.top + rect.height / 4;
+
+        const angle = Math.atan2(e.clientY - eyeY, e.clientX - eyeX);
+
+        const moveX = Math.cos(angle) * 4;
+        const moveY = Math.sin(angle) * 4;
+
+        eye.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+});
