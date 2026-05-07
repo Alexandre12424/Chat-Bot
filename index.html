@@ -3,58 +3,111 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ChatBot IA Empresarial</title>
+<title>NOM Assistente IA</title>
+
 <link rel="stylesheet" href="style.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
 <!-- LOGIN -->
-<section id="login-screen" class="screen active" role="main" aria-labelledby="login-title">
+<section id="login-screen" class="screen active">
+
 <div class="login-box">
-    <div class="mascot" aria-label="Mascote do chatbot: robô inteligente e simpático">
-        <svg width="80" height="80" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="50" cy="50" r="45" fill="#e0e0e0" stroke="#333" stroke-width="2"/>
-            <circle class="eye" cx="35" cy="40" r="5" fill="#333"/>
-            <circle class="eye" cx="65" cy="40" r="5" fill="#333"/>
-            <path d="M40 60 Q50 70 60 60" stroke="#333" stroke-width="3" fill="none"/>
-            <rect x="20" y="75" width="60" height="10" fill="#333" rx="5"/>
-            <rect x="30" y="85" width="40" height="5" fill="#666" rx="2"/>
-        </svg>
-    </div>
-    <h1 id="login-title">Bem-vindo ao NOM Assistente IA</h1>
-    <p>Seu parceiro inteligente para atendimento empresarial.</p>
-    <input type="text" id="username" placeholder="Seu nome" aria-label="Digite seu nome">
-    <input type="email" id="email" placeholder="Seu email" aria-label="Digite seu email">
-    <input type="password" id="password" placeholder="Sua senha" aria-label="Digite sua senha">
-    <button onclick="enterChat()" aria-label="Entrar no chat">Entrar</button>
-    <div id="login-error" style="color:red; margin-top:10px;"></div>
+
+<div class="login-glow"></div>
+
+<div class="mascot">
+<svg width="90" height="90" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+
+<circle cx="50" cy="50" r="45" fill="#ffffff" stroke="#7b2cff" stroke-width="3"/>
+
+<circle class="eye" cx="35" cy="40" r="5" fill="#7b2cff"/>
+<circle class="eye" cx="65" cy="40" r="5" fill="#7b2cff"/>
+
+<path d="M40 60 Q50 70 60 60"
+stroke="#7b2cff"
+stroke-width="4"
+fill="none"/>
+
+<rect x="20" y="75" width="60" height="10" fill="#7b2cff" rx="5"/>
+
+</svg>
 </div>
+
+<h1>Bem-vindo ao NOM IA</h1>
+
+<p>
+Seu assistente inteligente para empresas.
+</p>
+
+<input type="text" id="username" placeholder="Seu nome">
+<input type="email" id="email" placeholder="Seu email">
+<input type="password" id="password" placeholder="Sua senha">
+
+<button onclick="enterChat()">
+Entrar no Chat
+</button>
+
+<div id="login-error"></div>
+
+</div>
+
 </section>
 
 <!-- CHAT -->
-<section id="chat-screen" class="screen" role="main" aria-labelledby="chat-title">
+<section id="chat-screen" class="screen">
+
 <header>
-    <div class="header-top">
-        <h2 id="chat-title">Assistente IA</h2>
-        <button id="theme-toggle" class="theme-toggle" onclick="toggleTheme()" aria-label="Alternar tema claro/escuro" title="Alternar tema">🌙</button>
-    </div>
+
+<div class="header-left">
+
+<div class="online-dot"></div>
+
+<div>
+<h2>NOM Assistente IA</h2>
+<span>Online agora</span>
+</div>
+
+</div>
+
+<div class="header-actions">
+
+<button class="header-btn" onclick="startVoiceRecognition()">
+🎤
+</button>
+
+<button class="header-btn" id="theme-toggle" onclick="toggleTheme()">
+🌙
+</button>
+
+</div>
+
 </header>
 
-<div id="chat-box" role="log" aria-live="polite" aria-label="Área de mensagens do chat"></div>
+<div id="chat-box"></div>
 
 <footer>
-    <input type="text" id="user-input" placeholder="Digite sua mensagem..." aria-label="Campo de entrada de mensagem">
-    <button onclick="sendMessage()" aria-label="Enviar mensagem">➤</button>
-</footer>
-</section>
 
-<!-- RESULTADOS -->
-<section id="result-screen" class="screen" role="main" aria-labelledby="results-title">
-<h2 id="results-title">Sugestões da IA</h2>
-<div id="results" aria-label="Sugestões baseadas na conversa"></div>
-<button onclick="backToChat()" aria-label="Voltar ao chat">Voltar</button>
+<input
+type="text"
+id="user-input"
+placeholder="Digite sua mensagem..."
+autocomplete="off"
+>
+
+<button id="send-btn" onclick="sendMessage()">
+➤
+</button>
+
+</footer>
+
 </section>
 
 <script src="script.js"></script>
+
 </body>
 </html>
